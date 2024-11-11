@@ -1,13 +1,32 @@
 CC=gcc
-INCLUDES=-I./inc/
-CFLAGS=-std=c99 -g -Wextra -O2 -Bstatic
-LIB_DIR=-L./ascon-c-1.3.0/build/
-LIBS=
 
-all: application.o;
-	${CC} ${INCLUDES} ${CFLAGS} ${LIB_DIR} ${LIBS}
-	ar ruv bloat-lib.a application.o
-	runlib bloat-lib.a
+all: secure.o send.o recieve.o;
+	# Inlude assembly 32 bit int optimized ascon encryption
+	ar rv build/bloat-lib.a build/secure.o build/send.o build/recieve.o ascon-c-1.3.0/build/libcrypto_aead_asconabi32v13_bi32.a
+	ranlib build/bloat-lib.a
 
-application.o: application.c ;
-	${CC} -c application.c -o application.o
+secure.o: ./src/secure.c ;
+	${CC} -c ./src/secure.c -o build/secure.o
+
+recieve.o: ./src/recieve.c;
+	${CC} -c ./src/recieve.c -o build/recieve.o
+
+send.o: ./src/send.c;
+	${CC} -c ./src/send.c -o build/send.o
+
+.PHONY: clean
+
+clean: ;
+	rm -rf build
+	mkdir build
+
+.PHONY: lib-build
+
+lib-build: ;
+	cmake -S ascon-c-1.3.0 -B ascon-c-1.3.0/build
+	make -C ./ascon-c-1.3.0/build/
+
+.PHONY: lib-clean
+
+lib-clean: ;
+	rm -rf ascon-c-1.3.0/build/*
