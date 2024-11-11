@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcrypto_aead_ascon80pqv13_bi8.a CMakeFiles/crypto_aead_ascon80pqv13_bi8.dir/crypto_aead/ascon80pqv13/bi8/aead.c.o CMakeFiles/crypto_aead_ascon80pqv13_bi8.dir/crypto_aead/ascon80pqv13/bi8/constants.c.o CMakeFiles/crypto_aead_ascon80pqv13_bi8.dir/crypto_aead/ascon80pqv13/bi8/interleave.c.o CMakeFiles/crypto_aead_ascon80pqv13_bi8.dir/crypto_aead/ascon80pqv13/bi8/permutations.c.o CMakeFiles/crypto_aead_ascon80pqv13_bi8.dir/crypto_aead/ascon80pqv13/bi8/printstate.c.o
+/usr/bin/ranlib libcrypto_aead_ascon80pqv13_bi8.a

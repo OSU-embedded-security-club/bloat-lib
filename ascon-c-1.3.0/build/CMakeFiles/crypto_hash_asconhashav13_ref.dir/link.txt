@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcrypto_hash_asconhashav13_ref.a CMakeFiles/crypto_hash_asconhashav13_ref.dir/crypto_hash/asconhashav13/ref/hash.c.o CMakeFiles/crypto_hash_asconhashav13_ref.dir/crypto_hash/asconhashav13/ref/printstate.c.o
+/usr/bin/ranlib libcrypto_hash_asconhashav13_ref.a
