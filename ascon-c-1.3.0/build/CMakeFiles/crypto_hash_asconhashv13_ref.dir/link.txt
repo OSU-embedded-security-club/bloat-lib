@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcrypto_hash_asconhashv13_ref.a CMakeFiles/crypto_hash_asconhashv13_ref.dir/crypto_hash/asconhashv13/ref/hash.c.o CMakeFiles/crypto_hash_asconhashv13_ref.dir/crypto_hash/asconhashv13/ref/printstate.c.o
-/usr/bin/ranlib libcrypto_hash_asconhashv13_ref.a

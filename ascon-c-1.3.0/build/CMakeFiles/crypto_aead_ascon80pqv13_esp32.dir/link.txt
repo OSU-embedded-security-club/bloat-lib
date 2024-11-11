@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcrypto_aead_ascon80pqv13_esp32.a CMakeFiles/crypto_aead_ascon80pqv13_esp32.dir/crypto_aead/ascon80pqv13/esp32/core.c.o CMakeFiles/crypto_aead_ascon80pqv13_esp32.dir/crypto_aead/ascon80pqv13/esp32/decrypt.c.o CMakeFiles/crypto_aead_ascon80pqv13_esp32.dir/crypto_aead/ascon80pqv13/esp32/encrypt.c.o CMakeFiles/crypto_aead_ascon80pqv13_esp32.dir/crypto_aead/ascon80pqv13/esp32/permutations.c.o CMakeFiles/crypto_aead_ascon80pqv13_esp32.dir/crypto_aead/ascon80pqv13/esp32/printstate.c.o
-/usr/bin/ranlib libcrypto_aead_ascon80pqv13_esp32.a

@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG -std=c99 -O2 -fomit-frame-pointer -march=native -mtune=native CMakeFiles/genkat_crypto_hash_asconhashv13_esp32.dir/tests/genkat_hash.c.o -o genkat_crypto_hash_asconhashv13_esp32  libcrypto_hash_asconhashv13_esp32.a 
