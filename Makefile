@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-I./inc/ -I./ascon-c-1.3.0/crypto_hash/asconxofv13/armv7m/
 
-all: secure.o send.o recieve.o;
+all: secure.o send.o recieve.o hash.o;
 	# Inlude assembly 32 bit int optimized ascon encryption
 	ar rv build/bloat-lib.a build/secure.o build/send.o build/recieve.o build/hash.o ascon-c-1.3.0/build/libcrypto_aead_asconabi32v13_bi32.a
 	ranlib build/bloat-lib.a
@@ -15,7 +15,7 @@ recieve.o: ./src/recieve.c;
 send.o: ./src/send.c;
 	${CC} ${CFLAGS} -c ./src/send.c -o build/send.o
 	
-send.o: ./src/hash.c;
+hash.o: ./src/hash.c;
 	${CC} ${CFLAGS} -c ./src/hash.c -o build/hash.o
 
 .PHONY: clean

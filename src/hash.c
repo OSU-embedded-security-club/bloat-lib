@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 int hash(uint8_t message[], uint8_t *output){
     
@@ -9,13 +10,13 @@ int hash(uint8_t message[], uint8_t *output){
 
     output = calloc(desired_len, sizeof(uint8_t));
 
-    uint8_t size = strlen(message);
+    uint8_t size = strlen((const char *)message);
 
     ascon_state_t s; 
 
     ascon_inithash(&s);
 
-    ascon_absorb(&s, &message, size);
+    ascon_absorb(&s, message, size);
 
     ascon_squeeze(&s, output, desired_len);
 
@@ -30,8 +31,8 @@ int main(){
     uint8_t message[] = "hello world";
 
     uint8_t *output;
-
-    uint8_t *text = hash(message, output);
-
-    printf("%s", text);
+    
+    if(hash(message, output) == -1){
+        printf("Error creating hash");
+    }
 }
