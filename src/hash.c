@@ -1,3 +1,4 @@
+#include <hash.h>
 #include <ascon.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -27,12 +28,3 @@ int hash(uint8_t message[], uint8_t *output){
     return 0;
 }
 
-int main(){
-    uint8_t message[] = "hello world";
-
-    uint8_t *output;
-    
-    if(hash(message, output) == -1){
-        printf("Error creating hash");
-    }
-}
