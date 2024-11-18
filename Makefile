@@ -1,4 +1,5 @@
 CC=gcc
+CFLAGS=-I./inc/
 
 all: secure.o send.o recieve.o;
 	# Inlude assembly 32 bit int optimized ascon encryption
@@ -6,13 +7,13 @@ all: secure.o send.o recieve.o;
 	ranlib build/bloat-lib.a
 
 secure.o: ./src/secure.c ;
-	${CC} -c ./src/secure.c -o build/secure.o
+	${CC} ${CFLAGS} -c ./src/secure.c -o build/secure.o
 
 recieve.o: ./src/recieve.c;
-	${CC} -c ./src/recieve.c -o build/recieve.o
+	${CC} ${CFLAGS} -c ./src/recieve.c -o build/recieve.o
 
 send.o: ./src/send.c;
-	${CC} -c ./src/send.c -o build/send.o
+	${CC} ${CFLAGS} -c ./src/send.c -o build/send.o
 
 .PHONY: clean
 
