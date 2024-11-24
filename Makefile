@@ -42,3 +42,8 @@ test-build: main.o;
 
 main.o: ./test/src/main.c;
 	${CC} ${CFLAGS} -c ./test/src/main.c -o ./test/build/main.o
+
+.PHONY: test-clean
+
+test-clean: ;
+	rm -rf ./test/build/*
