@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "secure.h": "c",
+        "stddef.h": "c"
+    }
+}
