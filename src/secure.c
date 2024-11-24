@@ -1,5 +1,6 @@
 #include <stddef.h>
 #include <secure.h>
+#include <ascon.h>
 
 int bloat_initialize(void)
 {
@@ -8,14 +9,12 @@ int bloat_initialize(void)
         return result;
 }
 
-int encrypt(const uint8_t *const key, uint8_t *in_buf, size_t buf_size, uint8_t *out_buf)
+int encrypt(uint8_t tag, uint8_t out_buf, const uint8_t message, uint64_t mlen, const uint8_t ad, uint64_t ad_len, const uint8_t nucance, const uint8_t key)
 {
-        // tag, out buffer, message buffer, message size, idk, idk, idk, key
-        //ascon_aead_encrypt();
-        return 0;
+        return ascon_aead_encrypt(tag, out_buf, message, mlen, ad, ad_len, nucance, key);
 }
 
-int decrypt(uint8_t *out_buf)
+int decrypt(uint8_t message, const uint8_t tag, const uint8_t out_buff, uint64_t buff_len, const uint8_t ad, uint64_t ad_len, const uint8_t nuance, const uint8_t key)
 {
-        return 0;
+        return ascon_aead_decrypt(message, tag, out_buff, buff_len, ad, ad_len, nuance, key);
 }
