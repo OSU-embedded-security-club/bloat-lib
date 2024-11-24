@@ -5,7 +5,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int hash(uint8_t message[], uint8_t *output){
+int hash(uint8_t *message, uint8_t *output){
     
     uint64_t desired_len = 32;
 
